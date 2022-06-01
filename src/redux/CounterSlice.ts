@@ -5,7 +5,6 @@ interface CounterState {
   value: number;
   score: number;
   question: Array<Object>;
-  storedQuestion: Array<Object>;
   loadData: Array<any>;
   selectedQuestion: Array<Object>;
 }
@@ -14,7 +13,6 @@ const initialState: CounterState = {
   value: 0,
   score: 0,
   question: jsondata,
-  storedQuestion: [],
   loadData: [],
   selectedQuestion: []
 };
@@ -35,16 +33,13 @@ const counterSlice = createSlice({
         state.selectedQuestion.push(action.payload[i])
       }
     },
-    addingData(state, action: PayloadAction<Array<Object>>) {
-      state.storedQuestion = [...action.payload]
-    },
     finalData(state, action: PayloadAction<Object>) {
       state.loadData.push(action.payload)
     }
   },
 });
 
-export const { incremented, questionsToAsked, scoreCounted, addingData, finalData } = counterSlice.actions;
+export const { incremented, questionsToAsked, scoreCounted, finalData } = counterSlice.actions;
 export default counterSlice.reducer;
 
 // redux practice
