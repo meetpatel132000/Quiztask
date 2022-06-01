@@ -42,29 +42,3 @@ const counterSlice = createSlice({
 export const { incremented, questionsToAsked, scoreCounted, finalData } = counterSlice.actions;
 export default counterSlice.reducer;
 
-// redux practice
-
-// interface CounterState {
-//   value: number;
-// }
-
-// const initialState: CounterState = {
-//   value: 0,
-// };
-
-// const counterSlice = createSlice({
-//   name: "counter",
-//   initialState,
-//   reducers: {
-//     // inctremented
-//     incremented(state) {
-//       state.value++;
-//     },
-//     fixedAmountIncrement(state, action: PayloadAction<number>){
-//       state.value += action.payload
-//     }
-//   },
-// });
-
-// export const { incremented, fixedAmountIncrement } = counterSlice.actions;
-// export default counterSlice.reducer;
